@@ -588,3 +588,7 @@ jobs:
             echo "📜 最近日志（最后 30 行）:"
             tail -30 logs/stock_analysis_*.log 2>/dev/null || echo "无日志"
           fi
+            - name: 推送通知到 Bark
+        if: always()
+        run: |
+          curl -f "https://api.day.app/${{ secrets.BARK_KEY }}/📈%20股票分析已完成/今日股票分析数据已生成，请查看GitHub。"
