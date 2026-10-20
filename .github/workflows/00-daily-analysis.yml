@@ -592,4 +592,3 @@ jobs:
         if: always()
         run: |
           curl -f "https://api.day.app/${{ secrets.BARK_KEY }}/📈%20股票分析已完成/今日股票分析数据已生成，请查看GitHub。"
-                - name: 推送通知到 Bark
